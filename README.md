@@ -1,7 +1,7 @@
 # Cyrillic Alphabet Classifier
 
 ## Machine Setup
-1. Install Python 3
+1. Install Python
 1. Use pip to install the following:
    * Pillow
    * Keras
@@ -19,7 +19,7 @@ The reason for the folder names (aa, ab, ..., bg) is that on windows the cyrilli
 * from data/training -> data_converted/training
 * from data/testing -> data_converted/testing
 
-*Make sure the folders for converted exits, best to make a copy of data and rename it to data_converted to be overwritten*
+*Make sure the folders for converted exits, best to make a copy of data and rename it to data_converted for the files to be overwritten*
 
 ## Cyrillic Classifier
 train network and save to models/<filename>.h5
@@ -27,11 +27,11 @@ train network and save to models/<filename>.h5
 ## Cyrillic Check
 open image and insert into model to predict what it is
 
-## Test Instructions
-1. Use [this](https://pixlr.com/editor/) or MS paint to create a 56x56 **jpg** with a Cyrillic letter and a white background
-1. Save the image (eg: in data_converted/)
+## Predict Instructions
 1. Open Cyrillic check notebook
 1. Run the cell to create the models
 1. Run the cell to load the weights into the model
-1. Edit the filename of the file to test if needed
+1. Edit the filename of the image to load if needed
 1. Run the cell to get the prediction
+  * aa = 0, ab = 1, ..., bg = 32
+  * 0 = А, 1 = Б, 32 = Я

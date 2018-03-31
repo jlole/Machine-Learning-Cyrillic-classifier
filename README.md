@@ -10,28 +10,17 @@
    * h5py
 
 ## Convert files
-Since the images in the dataset we use are incompatible with keras, we have to convert them. This script converts the 278x278 rbga? png files into 56x56 rbg images.
+Since the images in the dataset we use are incompatible with keras, we have to convert them. This script converts the 278x278 rbga? png files into 28x28 rbg images.
 
-This makes the images compatible with keras __and__ smaller to save time.
+This makes the images compatible with keras __and__ smaller to save time while training the network.
 
-The reason for the folder names (aa, ab, ..., bg) is that on windows the cyrillic characters do not work correctly and numerical names doesn't stay in the same order in keras.
+This notebook takes images from data/combined and splits it up into data/testing and data/training
 
-* from data/training -> data_converted/training
-* from data/testing -> data_converted/testing
-
-*Make sure the folders for converted exits, best to make a copy of data and rename it to data_converted for the files to be overwritten*
+data/testing will contain 100 images per character and data/training will contain variable amounts depending on the ratio.
 
 ## Cyrillic Classifier
-train network and save to models/<filename>.h5
+train network and save weights to models/Model<number>.h5
 
 ## Cyrillic Check
 open image and insert into model to predict what it is
-
-## Predict Instructions
-1. Open Cyrillic check notebook
-1. Run the cell to create the models
-1. Run the cell to load the weights into the model
-1. Edit the filename of the image to load if needed
-1. Run the cell to get the prediction
-  * aa = 0, ab = 1, ..., bg = 32
-  * 0 = А, 1 = Б, 32 = Я
+there are images in data/predict to test

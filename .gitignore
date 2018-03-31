@@ -1,4 +1,2 @@
 .ipynb_checkpoints/*
-data/testing/*
-data/training/*
 data/_split/*
